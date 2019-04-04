@@ -9,10 +9,13 @@
     <title>Tea Selector</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <div class="jumbotron" id="titleText">
-          <h1>Tea Selector</h1>
+    <div class="container imageBackground">
+      <!-- <div class="jumbotron"> -->
+        <div class="" id="titleText">
+          <h1>Find your tea...</h1>
+        </div>
+        <div id="result">
+          <p> <span class="result"></span></p>
         </div>
         <form id="selector">
           <div class="row">
@@ -20,7 +23,10 @@
               <div id="type">
                 <div class="form-group">
                   <input type="checkbox" name="type" value="black"> Black<br>
-                  <input type="checkbox" name="type" value="green"> Green<br>
+                  <input type="checkbox" name="type" value="green"> Green
+                  <!-- <img src="img/green-tea.jpg" alt="tea" width="80" height="80" onmouseover="swapImage(this);" -->
+                  <!-- onmouseout="swapBack(this);">  -->
+                  <br>
                   <input type="checkbox" name="type" value="herbal"> Herbal<br>
                 </div>
               </div>
@@ -50,13 +56,10 @@
                    <option value="3">Large</option>
                    <option value="4">Extra Large</option>
                  </select> -->
-             <button type="submit" class="btn btn-info">Select my tea</button>
+             <button type="submit" class="btn"></button>
            </div>
         </form>
-        <div id="result">
-          <p> <span class="result"></span></p>
-        </div>
-      </div>
+      <!-- </div> -->
     </div>
   </body>
 </html>

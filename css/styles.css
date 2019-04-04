@@ -1,9 +1,70 @@
 #titleText {
-  background-color: coral;
+  /* background-image: url(../img/banner1.jpg); */
+  /* height: 100%; */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+ height: 300px;
 }
-.result {
-
+#titleText h1{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+  padding-top: 20px;
+  padding-right: 35%;
 }
 #result {
-    display: none;
+  height: 115px;
+  color: white;
+  padding-left: 40px;
+  font-weight: bold;
+  /* text-align: center; */
+  font-size: 30px;
+}
+
+.hideStyle {
+  background-color: black;
+  opacity: 0.5;
+  filter: Alpha(opacity=50); /* IE8 and earlier */
+}
+input[type=checkbox] + label {
+  color: red;
+  font-style: italic;
+}
+.container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 680px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.imageBackground {
+  background-image: url(../img/banner.jpg);
+}
+
+form {
+ background-color: rgba(0,0,0,0.5);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+
+body {
+   background-color: rgba(0,0,0,0.5);
+}
+
+.btn {
+  background-image: url(../img/tea-icon.png);
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+  margin-left: 40px;
+  margin-top: 40px;
+
 }

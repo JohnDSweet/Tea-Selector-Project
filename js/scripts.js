@@ -1,44 +1,31 @@
 function Tea() {
-  this.type = [];
-  this.style = [];
   this.flavor = [];
+  this.style = [];
+  this.type = [];
 }
-
-Tea.prototype.getTea = function(tea) {
-  for (var i = 0; i < database.length; i++) {
-    for (var j = 0; j < tea.type.length; j++) {
-      console.log(tea.type[j]);
-      console.log(database[i].type);
-
-      if (tea.type[j] === database[i].type) {
-        database[i].rank += 10;
-        console.log(database[i].name + " = " + database[i].rank);
-      };
-      if (tea.style[j] === database[i].style) {
-        database[i].rank += 10;
-        console.log(database[i].name + " = " + database[i].rank);
-      };
-      if (tea.flavor[j] === database[i].flavor) {
-        database[i].rank += 10;
-        console.log(database[i].name + " = " + database[i].rank);
-      };
-    };
-  };
-  // console.log("Earl Grey Rank: " + database[0].rank);
-  // console.log("Gunpowder Green Rank: " + database[1].rank);
-  // console.log("Rose Hip Rank: " + database[2].rank);
-};
 
 var database = [
     { name: 'Earl Grey',
-      type: 'black',
-      style: 'energy',
       flavor: 'none',
+      style: 'energy',
+      type: 'black',
       rank:  0
     },
-    { name: 'Gunpowder Green',
+    { name: 'English Breakfast',
+      flavor: 'none',
+      style: 'earthy',
+      type: 'black',
+      rank:  0
+    },
+    { name: 'Gunpowder Vanilla',
       type: 'green',
       style: 'light',
+      flavor: 'vanilla',
+      rank:  0
+    },
+    { name: 'Dragon Ginger',
+      type: 'green',
+      style: 'earthy',
       flavor: 'ginger',
       rank:  0
     },
@@ -47,9 +34,53 @@ var database = [
       style: 'light',
       flavor: 'floral',
       rank:  0
+    },
+    { name: 'Vanilla Chamomile',
+      type: 'herbal',
+      style: 'light',
+      flavor: 'vanilla',
+      rank:  0
     }
 ];
 
+var topName = "None";
+Tea.prototype.getTea = function(tea) {
+  for (var i = 0; i < database.length; i++) {
+    for (var j = 0; j <= tea.type.length; j++) {
+      if (tea.type[j] === database[i].type) {
+        database[i].rank += 10;
+      };
+      if (tea.style[j] === database[i].style) {
+        database[i].rank += 10;
+      };
+      if (tea.flavor[j] === database[i].flavor) {
+        database[i].rank += 10;
+      };
+    };
+  };
+  var topRank = 0;
+
+  for (var i = 0; i < database.length; i++) {
+    if (database[i].rank > topRank) {
+      topRank = database[i].rank;
+      topName = database[i].name;
+    };
+  };
+
+  for (var i = 0; i < database.length; i++) {
+    database[i].rank = 0;
+  };
+};
+
+// function change image
+// function swapImage(imgToSwap) {
+//   imgToSwap.src = "img/jasmine.jpg";
+//   imgToSwap.alt = "green-teaCup"
+// }
+// function swapBack(imgToSwap) {
+//   imgToSwap.src = "img/green-tea.jpg";
+//   imgToSwap.alt = "green-tea"
+// }
 
 $(document).ready(function() {
   $("form#selector").submit(function(event) {
@@ -65,9 +96,7 @@ $(document).ready(function() {
       tea.flavor.push($(this).val());
       });
     tea.getTea(tea);
-
     $("#result").show();
-    $(".result").append( "Your tea type requests: ");
-
+    $(".result").empty().append( "You should try our " + topName + ".");
   });
 });
