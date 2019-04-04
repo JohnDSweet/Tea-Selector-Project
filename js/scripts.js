@@ -70,33 +70,95 @@ Tea.prototype.getTea = function(tea) {
   for (var i = 0; i < database.length; i++) {
     database[i].rank = 0;
   };
+  $(".result").empty().append( "You should try our " + topName + ".");
 };
 
 // function change image
-// function swapImage(imgToSwap) {
-//   imgToSwap.src = "img/jasmine.jpg";
-//   imgToSwap.alt = "green-teaCup"
-// }
-// function swapBack(imgToSwap) {
-//   imgToSwap.src = "img/green-tea.jpg";
-//   imgToSwap.alt = "green-tea"
-// }
+function swapImage(imgToSwap) {
+  imgToSwap.src = "img/check-icon.png";
+  imgToSwap.alt = "green-teaCup"
+}
+function swapBack(imgToSwap) {
+  imgToSwap.src = "img/tea-icon.png";
+  imgToSwap.alt = "green-tea"
+}
 
 $(document).ready(function() {
   $("form#selector").submit(function(event) {
     event.preventDefault();
     var tea = new Tea();
-    $("input:checkbox[name=type]:checked").each(function() {
-      tea.type.push($(this).val());
-      });
-    $("input:checkbox[name=style]:checked").each(function() {
-      tea.style.push($(this).val());
-      });
-    $("input:checkbox[name=flavor]:checked").each(function() {
-      tea.flavor.push($(this).val());
-      });
-    tea.getTea(tea);
-    $("#result").show();
-    $(".result").empty().append( "You should try our " + topName + ".");
+    // $("input:checkbox[name=type]:checked").each(function() {
+    //   tea.type.push($(this).val());
+    //   });
+    //
+    // $("input:checkbox[name=style]:checked").each(function() {
+    //   tea.style.push($(this).val());
+    //   });
+    // $("input:checkbox[name=flavor]:checked").each(function() {
+    //   tea.flavor.push($(this).val());
+    //   });
+// debugger;
+    $("#black").click(function() {
+      console.log("start type");
+      tea.type.push($("#black").val());
+      console.log("type = " + tea.type);
+      tea.getTea(tea);
+    });
+    $("#green").click(function() {
+      console.log("start type");
+      tea.type.push($("#green").val());
+      console.log("type = " + tea.type);
+      tea.getTea(tea);
+    });
+    $("#herbal").click(function() {
+      console.log("start type");
+      tea.type.push($("#herbal").val());
+      console.log("type = " + tea.type);
+      tea.getTea(tea);
+    });
+
+    // buttons for style
+    $("#light").click(function() {
+      console.log("start type");
+      tea.style.push($("#light").val());
+      console.log("style = " + tea.style);
+      tea.getTea(tea);
+    });
+    $("#earthy").click(function() {
+      console.log("start style");
+      tea.style.push($("#earthy").val());
+      console.log("style = " + tea.style);
+      tea.getTea(tea);
+    });
+    $("#energy").click(function() {
+      console.log("start style");
+      tea.style.push($("#energy").val());
+      console.log("style = " + tea.style);
+      tea.getTea(tea);
+    });
+
+    // buttons for flavor
+    $("#ginger").click(function() {
+      console.log("start flavor");
+      tea.flavor.push($("#ginger").val());
+      console.log("flavor = " + tea.flavor);
+      tea.getTea(tea);
+    });
+    $("#floral").click(function() {
+      console.log("start flavor");
+      tea.flavor.push($("#floral").val());
+      console.log("flavor = " + tea.flavor);
+      tea.getTea(tea);
+    });
+    $("#vanilla").click(function() {
+      console.log("start flavor");
+      tea.flavor.push($("#vanilla").val());
+      console.log("flavor = " + tea.flavor);
+      tea.getTea(tea);
+    });
+
+    // tea.getTea(tea);
+    // $("#result").show();
+    // $(".result").empty().append( "You should try our " + topName + ".");
   });
 });
