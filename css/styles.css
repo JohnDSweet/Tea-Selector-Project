@@ -1,79 +1,136 @@
+/* Things to do
+1. Make menu buttons inverted color
+2. Make menu buttons fade in one at a time
+3. More flavors
+4. Make entire screen go dark, not just one div */
+
+
+
 #titleText {
-  /* background-image: url(../img/banner1.jpg); */
-  /* height: 100%; */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
- height: 300px;
-}
-#titleText h1{
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 140px;
   color: white;
   font-weight: bold;
-  text-align: center;
   font-size: 60px;
-  padding-top: 20px;
   padding-right: 35%;
+  /* border: red solid 1px; */
 }
-
-/* #titleText h1:hover {
-  color: green;
-} */
 
 #result {
-  height: 115px;
-  color: white;
-  padding-left: 40px;
+  color: rgba(0,0,0,0);
+  /* height: 100px; */
   font-weight: bold;
-  /* text-align: center; */
   font-size: 30px;
+  line-height: 15px;
+  /* border: red solid 1px; */
 }
-
+/*
 .hideStyle {
   background-color: black;
   opacity: 0.5;
   filter: Alpha(opacity=50); /* IE8 and earlier */
+} */
+
+menuShadeContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-input[type=checkbox] + label {
-  color: red;
-  font-style: italic;
+
+#menuShade {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  /* height: 700px;
+  width: 100%; */
+  background-color:  rgba(0,0,0,0.75);
+  /* opacity: 0.1; */
+  /* filter: Alpha(opacity=50); /* IE8 and earlier */ */
 }
+
 .container {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  height: 680px;
-  padding-left: 0px;
-  padding-right: 0px;
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  /* height: 700px;
+  width: 100%; */
+  padding-top: 60px;
+  padding-left: 140px;
+  /* padding-bottom: 120px; */
 }
 
 .imageBackground {
   background-image: url(../img/banner.jpg);
 }
 
-form {
- background-color: rgba(0,0,0,0.5);
+br {
+  line-height: 50%;
+}
+
+.row {
+  margin-left: 80px;
+}
+
+button {
   color: white;
   font-weight: bold;
   text-align: center;
   font-size: 30px;
+  margin-top: 0px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+  padding-left: 50px;
+  /* border: red solid 1px; */
 }
 
-body {
-   background-color: rgba(0,0,0,0.5);
+button:hover {
+  color: coral;
 }
 
-.btn {
-  background-image: url(../img/tea-icon.png);
-  background-size: 40px 40px;
-  height: 40px;
-  width: 40px;
-  margin-left: 40px;
-  margin-top: 40px;
-
+button:focus {
+  outline:0;
 }
-.icon {
-  height: 40px;
-  width: 40px;
+
+ .clicked {
+   color: coral;
+ }
+
+ .clicked:hover {
+   color: coral;
+ }
+
+ .white {
+   color: white;
+ }
+
+.selectedButton{
+  /* z-index: 5; */
+}
+
+.menuButtons {
+  z-index: 20;
+  position: absolute;
+  /* color: rgba(0,0,0,0.75); */
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  /* z-index:5; */
 }

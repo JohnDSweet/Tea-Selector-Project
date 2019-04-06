@@ -9,54 +9,54 @@
     <title>Tea Selector</title>
   </head>
   <body>
-    <div class="container imageBackground">
-      <!-- <div class="jumbotron"> -->
-        <div class="" id="titleText">
-          <h1>Find your tea...</h1>
-        </div>
-        <div id="result">
-          <p> <span class="result"></span></p>
-        </div>
-        <form id="selector">
-          <div class="row">
-            <div class="col-md-4">
-              <div id="type">
-                <div class="form-group">
-                  <input type="image" name="type" value="black" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);"id="black"> Black<br>
-                  <input type="image" name="type" value="green" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="green"> Green<br>
-                  <input type="image" name="type" value="herbal" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="herbal"> Herbal<br>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div id="style">
-                <div class="form-group">
-                  <input type="image" name="style" value="light" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);"id="light"> Light<br>
-                  <input type="image" name="style" value="earthy" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="earthy"> Earthy<br>
-                  <input type="image" name="style" value="energy" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="energy"> Energizing<br>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div id="flavor">
-                <div class="form-group">
-                  <input type="image" name="flavor" value="ginger" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);"id="ginger"> Ginger<br>
-                  <input type="image" name="flavor" value="floral" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="floral"> Floral<br>
-                  <input type="image" name="flavor" value="vanilla" src="img/tea-icon.png" class = "icon" onmouseover="swapImage(this);" onmouseout="swapBack(this);" id="vanilla"> Vanilla<br>
-                </div>
-              </div>
-            </div>
-                 <!-- <p>What about Size???</p>
-                 <select class="form-control" id="size">
-                   <option value="1">Small</option>
-                   <option value="2">Medium</option>
-                   <option value="3">Large</option>
-                   <option value="4">Extra Large</option>
-                 </select> -->
-             <!-- <button type="submit" class="btn"></button> -->
-           </div>
-        </form>
-      <!-- </div> -->
+  <div id="menuShadeContainer">
+    <div id="menuShade" class="hidden">WORDS
     </div>
+    <div class="container imageBackground">
+      <div>
+        <h1 id="titleText">Describe your tea...</h1>
+      </div><br>
+      <div id="result">
+        <p> <span class="result">p</span></p><br>
+        <p> <span class="resultTea">p</span></p>
+      </div>
+      <br><br><br><br><br>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="type">
+            <div id="typeMenuButtons" class="menuButtons hidden">
+              <button value="black" id="black">Black</button><br>
+              <button value="green" id="green">Green</button><br>
+              <button value="herbal" id="herbal">Herbal</button><br>
+            </div>
+            <div>
+              <button id="typeSelectedButton" class="selectedButton">Type ⌄</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="style">
+            <div id="styleMenuButtons" class="menuButtons hidden">
+              <button value="light" id="light"> Light</button><br>
+              <button value="earthy" id="earthy"> Earthy</button><br>
+              <button value="energy" id="energy"> Energizing</button><br>
+            </div>
+            <div>
+              <button id="styleSelectedButton" class="selectedButton">Style ⌄</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="flavor">
+            <div class="form-group">
+              <button value="ginger" id="ginger"> Ginger</button>
+              <button value="floral" id="floral"> Floral</button><br>
+              <button value="vanilla" id="vanilla"> Vanilla</button><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
