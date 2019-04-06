@@ -1,48 +1,49 @@
+var database = [
+  { name: 'Earl Grey',
+    flavor: 'none',
+    style: 'energy',
+    type: 'black',
+    rank:  0
+  },
+  { name: 'English Breakfast',
+    flavor: 'none',
+    style: 'earthy',
+    type: 'black',
+    rank:  0
+  },
+  { name: 'Gunpowder Vanilla',
+    type: 'green',
+    style: 'light',
+    flavor: 'vanilla',
+    rank:  0
+  },
+  { name: 'Dragon Ginger',
+    type: 'green',
+    style: 'earthy',
+    flavor: 'ginger',
+    rank:  0
+  },
+  { name: 'Rose Hips',
+    type: 'herbal',
+    style: 'light',
+    flavor: 'floral',
+    rank:  0
+  },
+  { name: 'Vanilla Chamomile',
+    type: 'herbal',
+    style: 'light',
+    flavor: 'vanilla',
+    rank:  0
+  }
+];
+
 function Tea() {
   this.flavor = [];
   this.style = [];
   this.type = [];
 }
-var tea = new Tea();
 
-var database = [
-    { name: 'Earl Grey',
-      flavor: 'none',
-      style: 'energy',
-      type: 'black',
-      rank:  0
-    },
-    { name: 'English Breakfast',
-      flavor: 'none',
-      style: 'earthy',
-      type: 'black',
-      rank:  0
-    },
-    { name: 'Gunpowder Vanilla',
-      type: 'green',
-      style: 'light',
-      flavor: 'vanilla',
-      rank:  0
-    },
-    { name: 'Dragon Ginger',
-      type: 'green',
-      style: 'earthy',
-      flavor: 'ginger',
-      rank:  0
-    },
-    { name: 'Rose Hips',
-      type: 'herbal',
-      style: 'light',
-      flavor: 'floral',
-      rank:  0
-    },
-    { name: 'Vanilla Chamomile',
-      type: 'herbal',
-      style: 'light',
-      flavor: 'vanilla',
-      rank:  0
-    }
-];
+var tea = new Tea();
 
 Tea.prototype.getTea = function(tea) {
   for (var i = 0; i < database.length; i++) {
@@ -79,9 +80,10 @@ Tea.prototype.getTea = function(tea) {
     database[i].rank = 0;
   };
 
+  $(".resultTea").empty().hide().addClass("coral").append(topName[0]).fadeIn(500);
+
   if (topName.length === 1) {
     $(".result").empty().addClass("white").append("Our recommendation is...");
-    $(".resultTea").empty().hide().addClass("coral").append(topName[0]).fadeIn(500);
     for (var i = 1; i < (topName.length); i++) {
       $(".resultTea").append(" or " + topName[i]);
     };
@@ -89,7 +91,6 @@ Tea.prototype.getTea = function(tea) {
 
   if (topName.length > 1) {
     $(".result").empty().addClass("white").append("Our recommendations are...");
-    $(".resultTea").empty().hide().addClass("coral").append(topName[0]).fadeIn(500);
     for (var i = 1; i < (topName.length); i++) {
       $(".resultTea").append(" or<br><br><br>" + topName[i]);
     };
@@ -97,10 +98,20 @@ Tea.prototype.getTea = function(tea) {
 };
 
 $(document).ready(function() {
+
   // buttons for type
+
   $("#typeSelectedButton").click(function() {
     $("#typeMenuButtons").hide().removeClass("hidden").fadeIn(500);
-    // $("#container").addClass("hideStyle");
+    $("#black").hide().fadeIn(150);
+    $("#green").hide();
+    setTimeout(function(){
+    $("#green").fadeIn(200);
+  }, 150);
+    $("#herbal").hide()
+    setTimeout(function(){
+    $("#herbal").fadeIn(200);
+  }, 300);
     $("#menuShade").hide().removeClass("hidden").fadeIn(500);
   });
 
@@ -130,61 +141,20 @@ $(document).ready(function() {
       $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
-  // $("#black").click(function() {
-  //   if (tea.type.includes($("#black").val())) {
-  //     for (var i = 0; i < tea.type.length; i++) {
-  //       if (tea.type[i] === $("#black").val()) {
-  //         tea.type.splice(i,1);
-  //         $("#black").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.type)
-  //       };
-  //     };
-  //   } else {
-  //     tea.type.push($("#black").val());
-  //     $("#black").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.type)
-  //   };
-  //   tea.getTea(tea);
-  // });
-
-  // $("#green").click(function() {
-  //   if (tea.type.includes($("#green").val())) {
-  //     for (var i = 0; i < tea.type.length; i++) {
-  //       if (tea.type[i] === $("#green").val()) {
-  //         tea.type.splice(i,1);
-  //         $("#green").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.type)
-  //       };
-  //     };
-  //   } else {
-  //     tea.type.push($("#green").val());
-  //     $("#green").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.type)
-  //   };
-  //   tea.getTea(tea);
-  // });
-  //
-  // $("#herbal").click(function() {
-  //   if (tea.type.includes($("#herbal").val())) {
-  //     for (var i = 0; i < tea.type.length; i++) {
-  //       if (tea.type[i] === $("#herbal").val()) {
-  //         tea.type.splice(i,1);
-  //         $("#herbal").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.type)
-  //       };
-  //     };
-  //   } else {
-  //     tea.type.push($("#herbal").val());
-  //     $("#herbal").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.type)
-  //   };
-  //   tea.getTea(tea);
-  // });
 
   // buttons for style
 
   $("#styleSelectedButton").click(function() {
-    $("#styleMenuButtons").removeClass("hidden");
+    $("#styleMenuButtons").hide().removeClass("hidden").fadeIn();
+    $("#light").hide().fadeIn(150);
+    $("#earthy").hide();
+    setTimeout(function(){
+    $("#earthy").fadeIn(200);
+    }, 150);
+    $("#energy").hide()
+    setTimeout(function(){
+    $("#energy").fadeIn(200);
+    }, 300);
     $("#menuShade").hide().removeClass("hidden").fadeIn(500);
   });
 
@@ -215,56 +185,8 @@ $(document).ready(function() {
       tea.getTea(tea);
     });
 
-  // $("#light").click(function() {
-  //   if (tea.style.includes($("#light").val())) {
-  //     for (var i = 0; i < tea.style.length; i++) {
-  //       if (tea.style[i] === $("#light").val()) {
-  //         tea.style.splice(i,1);
-  //         $("#light").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.style)
-  //       };
-  //     };
-  //   } else {
-  //     tea.style.push($("#light").val());
-  //     $("#light").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.style)
-  //   };
-  //   tea.getTea(tea);
-  // });
-  // $("#earthy").click(function() {
-  //   if (tea.style.includes($("#earthy").val())) {
-  //     for (var i = 0; i < tea.style.length; i++) {
-  //       if (tea.style[i] === $("#earthy").val()) {
-  //         tea.style.splice(i,1);
-  //         $("#earthy").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.style)
-  //       };
-  //     };
-  //   } else {
-  //     tea.style.push($("#earthy").val());
-  //     $("#earthy").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.style)
-  //   };
-  //   tea.getTea(tea);
-  // });
-  // $("#energy").click(function() {
-  //   if (tea.style.includes($("#energy").val())) {
-  //     for (var i = 0; i < tea.style.length; i++) {
-  //       if (tea.style[i] === $("#energy").val()) {
-  //         tea.style.splice(i,1);
-  //         $("#energy").removeClass("clicked");
-  //         console.log("Removed the item. Type Array: " + tea.style)
-  //       };
-  //     };
-  //   } else {
-  //     tea.style.push($("#energy").val());
-  //     $("#energy").addClass("clicked");
-  //     console.log("Value added to array. Type Array: " + tea.style)
-  //   };
-  //   tea.getTea(tea);
-  // });
-
   // buttons for flavor
+
   $("#ginger").click(function() {
     if (tea.flavor.includes($("#ginger").val())) {
       for (var i = 0; i < tea.flavor.length; i++) {
@@ -281,6 +203,7 @@ $(document).ready(function() {
     };
     tea.getTea(tea);
   });
+
   $("#floral").click(function() {
     if (tea.flavor.includes($("#floral").val())) {
       for (var i = 0; i < tea.flavor.length; i++) {
@@ -297,6 +220,7 @@ $(document).ready(function() {
     };
     tea.getTea(tea);
   });
+
   $("#vanilla").click(function() {
     if (tea.flavor.includes($("#vanilla").val())) {
       for (var i = 0; i < tea.flavor.length; i++) {

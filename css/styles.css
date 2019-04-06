@@ -1,9 +1,9 @@
-/* Things to do
-1. Make menu buttons inverted color
-2. Make menu buttons fade in one at a time
-3. More flavors
-4. Make entire screen go dark, not just one div */
-
+/* Things to do */
+/* 1. Make menu buttons intuitive colors */
+/* 2. break ties better or require more selections */
+/* 3. Add buttons for "I prefer" and "I must have" */
+/* 4. More flavors */
+/* 5. Fix background picture issues */
 
 
 #titleText {
@@ -26,10 +26,6 @@
   font-size: 30px;
   line-height: 15px;
   /* border: red solid 1px; */
-}
-
-.coral {
-  color: coral;
 }
 
 menuShadeContainer {
@@ -61,12 +57,16 @@ menuShadeContainer {
   background-image: url(../img/banner.jpg);
 }
 
-br {
-  line-height: 50%;
+.menuButtons {
+  z-index: 20;
+  position: absolute;
+  /* color: rgba(0,0,0,0.75); */
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.row {
-  margin-left: 80px;
+br {
+  line-height: 50%;
 }
 
 button {
@@ -89,34 +89,26 @@ button:focus {
   outline:0;
 }
 
- .clicked {
-   color: coral;
- }
-
- .clicked:hover {
-   color: coral;
- }
-
- .white {
-   color: white;
- }
-
-.selectedButton{
-  /* z-index: 5; */
+.row {
+  margin-left: 80px;
 }
 
-.menuButtons {
-  z-index: 20;
-  position: absolute;
-  /* color: rgba(0,0,0,0.75); */
-  font-weight: bold;
-  font-size: 30px;
+.clicked {
+  color: coral;
+}
+
+.clicked:hover {
+  color: coral;
+}
+
+.white {
+  color: white;
+}
+
+.coral {
+  color: coral;
 }
 
 .hidden {
   display: none;
-}
-
-.visible {
-  /* z-index:5; */
 }
