@@ -72,15 +72,15 @@ Tea.prototype.getTea = function(tea) {
     database[i].rank = 0;
   };
   $(".result").empty().addClass("white").append("Our recommendation is...");
-  $(".resultTea").empty().addClass("white").append(topName);
+  $(".resultTea").empty().hide().addClass("coral").append(topName).fadeIn(500);
 };
 
 $(document).ready(function() {
   // buttons for type
   $("#typeSelectedButton").click(function() {
-    $("#typeMenuButtons").removeClass("hidden");
+    $("#typeMenuButtons").hide().removeClass("hidden").fadeIn(500);
     // $("#container").addClass("hideStyle");
-    $("#menuShade").removeClass("hidden");
+    $("#menuShade").hide().removeClass("hidden").fadeIn(500);
   });
 
   $("#black").click(function() {
@@ -88,7 +88,7 @@ $(document).ready(function() {
       tea.type.push($("#black").val());
       $("#typeMenuButtons").addClass("hidden");
       $("#typeSelectedButton").empty().append("Black ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
       tea.type.push($("#green").val());
       $("#typeMenuButtons").addClass("hidden");
       $("#typeSelectedButton").empty().append("Green ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
       tea.type.push($("#herbal").val());
       $("#typeMenuButtons").addClass("hidden");
       $("#typeSelectedButton").empty().append("Herbal ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
   // $("#black").click(function() {
@@ -164,7 +164,7 @@ $(document).ready(function() {
 
   $("#styleSelectedButton").click(function() {
     $("#styleMenuButtons").removeClass("hidden");
-    $("#menuShade").removeClass("hidden");
+    $("#menuShade").hide().removeClass("hidden").fadeIn(500);
   });
 
   $("#light").click(function() {
@@ -172,7 +172,7 @@ $(document).ready(function() {
       tea.style.push($("#light").val());
       $("#styleMenuButtons").addClass("hidden");
       $("#styleSelectedButton").empty().append("Light ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
 
@@ -181,7 +181,7 @@ $(document).ready(function() {
       tea.style.push($("#earthy").val());
       $("#styleMenuButtons").addClass("hidden");
       $("#styleSelectedButton").empty().append("Earthy ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
 
@@ -190,7 +190,7 @@ $(document).ready(function() {
       tea.style.push($("#energy").val());
       $("#styleMenuButtons").addClass("hidden");
       $("#styleSelectedButton").empty().append("Energy ⌄");
-      $("#menuShade").addClass("hidden");
+      $("#menuShade").fadeOut(500);
       tea.getTea(tea);
     });
 
