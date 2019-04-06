@@ -44,35 +44,56 @@ var database = [
     }
 ];
 
-var topName = "None";
 Tea.prototype.getTea = function(tea) {
   for (var i = 0; i < database.length; i++) {
     for (var j = 0; j <= tea.type.length; j++) {
       if (tea.type[j] === database[i].type) {
         database[i].rank += 10;
       };
+    };
+    for (var j = 0; j <= tea.style.length; j++) {
       if (tea.style[j] === database[i].style) {
         database[i].rank += 10;
       };
+    };
+    for (var j = 0; j <= tea.flavor.length; j++) {
       if (tea.flavor[j] === database[i].flavor) {
         database[i].rank += 10;
       };
     };
   };
-  var topRank = 0;
 
+  var topRank = 0;
+  var topName = [];
   for (var i = 0; i < database.length; i++) {
+    if (database[i].rank === topRank) {
+      topName.push(database[i].name);
+    };
     if (database[i].rank > topRank) {
       topRank = database[i].rank;
-      topName = database[i].name;
+      topName = [database[i].name];
     };
   };
 
   for (var i = 0; i < database.length; i++) {
     database[i].rank = 0;
   };
-  $(".result").empty().addClass("white").append("Our recommendation is...");
-  $(".resultTea").empty().hide().addClass("coral").append(topName).fadeIn(500);
+
+  if (topName.length === 1) {
+    $(".result").empty().addClass("white").append("Our recommendation is...");
+    $(".resultTea").empty().hide().addClass("coral").append(topName[0]).fadeIn(500);
+    for (var i = 1; i < (topName.length); i++) {
+      $(".resultTea").append(" or " + topName[i]);
+    };
+  };
+
+  if (topName.length > 1) {
+    $(".result").empty().addClass("white").append("Our recommendations are...");
+    $(".resultTea").empty().hide().addClass("coral").append(topName[0]).fadeIn(500);
+    for (var i = 1; i < (topName.length); i++) {
+      $(".resultTea").append(" or<br><br><br>" + topName[i]);
+    };
+  };
 };
 
 $(document).ready(function() {
