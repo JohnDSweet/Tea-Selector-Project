@@ -3,28 +3,39 @@
 /* 2. break ties better or require more selections */
 /* 3. Add buttons for "I prefer" and "I must have" */
 /* 4. More flavors */
-/* 5. Fix background picture issues */
+/* 5. make shaded buttons white */
+/* 7. Add hover box with details about the tea */
 
 
-#titleText {
-  /* background-position: center; */
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  height: 100px;
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
-  padding-right: 35%;
+
+.col-md-6 {
   /* border: red solid 1px; */
 }
 
-#result {
+.resultTitle {
   color: rgba(0,0,0,0);
   height: 100px;
+  width: 550px;
   font-weight: bold;
   font-size: 30px;
   line-height: 15px;
+  /* border: red solid 1px; */
+}
+
+.titleText {
+  font-weight: bold;
+  font-size: 50px;
+  /* border: red solid 1px; */
+}
+
+.resultTea {
+  color: rgba(0,0,0,0);
+  /* height: 100px; */
+  /* width: 550px; */
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  /* line-height: 15px; */
   /* border: red solid 1px; */
 }
 
@@ -45,22 +56,50 @@ menuShadeContainer {
 .container {
   width: 100%;
   height: 100%;
-  position: absolute;
+  /* position: absolute; */
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
   padding-top: 60px;
-  padding-left: 140px;
+  /* padding-left: 60px; */
+  /* border: red solid 1px; */
+}
+
+.picture {
+    text-align: center;
 }
 
 .imageBackground {
-  background-image: url(../img/banner.jpg);
+  /* background-image: url(../img/banner.jpg); */
+  /* border: red solid 1px; */
+}
+
+.whiteTeaPotBackground {
+  background-image: url(https://www.t2tea.com/on/demandware.static/-/Library-Sites-T2SharedLibrary/default/dwff63abce/images/teafinder/vessel-hot-herbal.jpg);
+}
+.blackTeaPotBackground {
+  background-image: url(https://www.t2tea.com/on/demandware.static/-/Library-Sites-T2SharedLibrary/default/dw4b4e5ac0/images/teafinder/D49-Irish-Breakfast-hot.jpg);
+}
+.greenTeaPotBackground {
+  background-image: url(https://www.t2tea.com/on/demandware.static/-/Library-Sites-T2SharedLibrary/default/dw4b4e5ac0/images/teafinder/D51-Japanese-GMC-Sencha-hot.jpg);
+}
+.herbalTeaPotBackground {
+  background-image: url(https://www.t2tea.com/on/demandware.static/-/Library-Sites-T2SharedLibrary/default/dw4b4e5ac0/images/teafinder/D53-Just-Chamomile-hot.jpg);
+}
+
+.background {
+  height: 550px;
+  z-index: -10;
+}
+
+#teaPic {
+padding-top: 20px;
+  height: 200px;
 }
 
 .menuButtons {
   z-index: 20;
   position: absolute;
-  /* color: rgba(0,0,0,0.75); */
   font-weight: bold;
   font-size: 30px;
 }
@@ -70,14 +109,14 @@ br {
 }
 
 button {
-  color: white;
+  width: 140px;
+  color: black;
   font-weight: bold;
   text-align: center;
   font-size: 30px;
   margin-top: 0px;
   border: none;
   background-color: rgba(0,0,0,0);
-  padding-left: 50px;
   /* border: red solid 1px; */
 }
 
@@ -90,7 +129,7 @@ button:focus {
 }
 
 .row {
-  margin-left: 80px;
+  /* margin-left: 80px; */
 }
 
 .clicked {
@@ -103,6 +142,10 @@ button:focus {
 
 .white {
   color: white;
+}
+
+.black {
+  color: black;
 }
 
 .coral {

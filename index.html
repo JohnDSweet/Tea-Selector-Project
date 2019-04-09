@@ -9,54 +9,74 @@
     <title>Tea Selector</title>
   </head>
   <body>
-  <div id="menuShadeContainer">
-    <div id="menuShade" class="hidden">WORDS
-    </div>
-    <div class="container imageBackground">
-      <div>
-        <h1 id="titleText">Describe your tea...</h1>
-      </div><br>
-      <div id="result">
-        <p> <span class="result">tea</span></p><br>
-        <p> <span class="resultTea">tea</span></p>
+    <div id="menuShadeContainer">
+      <div id="menuShade" class="hidden">
       </div>
-      <br><br><br><br><br><br>
-      <div class="row">
-        <div class="col-md-4">
-          <div id="type">
-            <div id="typeMenuButtons" class="menuButtons hidden">
-              <button value="black" id="black">Black</button><br>
-              <button value="green" id="green">Green</button><br>
-              <button value="herbal" id="herbal">Herbal</button><br>
-            </div>
+      <div class="container imageBackground">
+        <div class="row">
+          <div class="col-md-6">
             <div>
-              <button id="typeSelectedButton" class="selectedButton">Type ⌄</button>
+              <h1 class="titleText">Describe your tea...</h1>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <div id="type">
+                  <div id="typeMenuButtons" class="menuButtons hidden">
+                    <button value="black" id="black">Black</button><br>
+                    <button value="green" id="green">Green</button><br>
+                    <button value="herbal" id="herbal">Herbal</button><br>
+                  </div>
+                  <div>
+                    <button id="typeSelectedButton" class="selectedButton">Type ⌄</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div id="style">
+                  <div id="styleMenuButtons" class="menuButtons hidden">
+                    <button value="light" id="light"> Light</button><br>
+                    <button value="earthy" id="earthy"> Earthy</button><br>
+                    <button value="energy" id="energy"> Energy</button><br>
+                  </div>
+                  <div>
+                    <button id="styleSelectedButton" class="selectedButton">Style ⌄</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div id="flavor">
+                  <div class="form-group">
+                    <button value="ginger" id="ginger"> Ginger</button>
+                    <button value="floral" id="floral"> Floral</button><br>
+                    <button value="vanilla" id="vanilla"> Vanilla</button><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div>
+              <p><span class="resultTitle outline">tea</span></p>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div id="result1" class="resultTea">
+                </div>
+                <div id="teaPicture1" class="picture">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="result2" class="resultTea">
+                </div>
+                <div id="teaPicture2" class="picture">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div id="style">
-            <div id="styleMenuButtons" class="menuButtons hidden">
-              <button value="light" id="light"> Light</button><br>
-              <button value="earthy" id="earthy"> Earthy</button><br>
-              <button value="energy" id="energy"> Energizing</button><br>
-            </div>
-            <div>
-              <button id="styleSelectedButton" class="selectedButton">Style ⌄</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div id="flavor">
-            <div class="form-group">
-              <button value="ginger" id="ginger"> Ginger</button>
-              <button value="floral" id="floral"> Floral</button><br>
-              <button value="vanilla" id="vanilla"> Vanilla</button><br>
-            </div>
+          <div id="teaPot" class="col-md-6 background whiteTeaPotBackground">
           </div>
         </div>
       </div>
     </div>
-  </div>
   </body>
 </html>
