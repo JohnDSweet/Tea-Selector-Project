@@ -3,7 +3,6 @@
 /* 2. break ties better or require more selections */
 /* 3. Add buttons for "I prefer" and "I must have" */
 /* 4. More flavors */
-/* 5. make shaded buttons white */
 /* 7. Add hover box with details about the tea */
 
 
@@ -102,6 +101,7 @@ padding-top: 20px;
   position: absolute;
   font-weight: bold;
   font-size: 30px;
+  width: 350px;
 }
 
 br {
@@ -109,7 +109,7 @@ br {
 }
 
 button {
-  width: 140px;
+  /* width: 140px; */
   color: black;
   font-weight: bold;
   text-align: center;
